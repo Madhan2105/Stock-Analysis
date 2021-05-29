@@ -12,8 +12,12 @@ class ShareMarket(Resource):
         # return {"hey":"sdf"}
         temp = stap.predictPrice(isin)
         return temp
+class Landing(Resource):
+    def get(self):
+        return {"Hello":"World"}
 
 api.add_resource(ShareMarket, '/getPrice/<isin>') # Route_1
+api.add_resource(Landing, '/') # Route_1
 
 if __name__ == '__main__':
-     app.run(port='8001')
+     app.run(port='8000')
